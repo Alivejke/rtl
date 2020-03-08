@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./styles.scss"
+import "./styles.scss";
 
 export default function Teaser({ show }) {
   if (!show) return null;
@@ -9,7 +9,11 @@ export default function Teaser({ show }) {
   return (
     <article className="teaser">
       <Link to={`/shows/${show.id}`} className="teaser__poster">
-        <img className="teaser__image" src={show.image.medium} alt={show.name} />
+        <img
+          className="teaser__image"
+          src={show.image.medium}
+          alt={show.name}
+        />
       </Link>
       <h2 className="teaser__title">
         <Link to={`/shows/${show.id}`} className="teaser__link">

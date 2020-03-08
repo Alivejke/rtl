@@ -1,8 +1,14 @@
-import { normalize } from 'normalizr';
+import { normalize } from "normalizr";
 
 export default function callApiMiddleware({ dispatch, getState }) {
   return next => action => {
-    const { types, callAPI, shouldCallAPI = () => true, params = {}, schema } = action;
+    const {
+      types,
+      callAPI,
+      shouldCallAPI = () => true,
+      params = {},
+      schema
+    } = action;
 
     if (!types) {
       // Normal action: pass it on
@@ -12,12 +18,12 @@ export default function callApiMiddleware({ dispatch, getState }) {
     if (
       !Array.isArray(types) ||
       types.length !== 3 ||
-      !types.every(type => typeof type === 'string')
+      !types.every(type => typeof type === "string")
     ) {
-      throw new Error('Expected an array of three string types.');
+      throw new Error("Expected an array of three string types.");
     }
-    if (typeof callAPI !== 'function') {
-      throw new Error('Expected callAPI to be a function.');
+    if (typeof callAPI !== "function") {
+      throw new Error("Expected callAPI to be a function.");
     }
     if (!shouldCallAPI(getState())) {
       return;
@@ -31,14 +37,14 @@ export default function callApiMiddleware({ dispatch, getState }) {
     );
 
     return callAPI().then(
-      (response) =>
+      response =>
         dispatch(
           Object.assign({}, params, {
             payload: schema ? normalize(response, schema) : response,
             type: successType
           })
         ),
-      (error) =>
+      error =>
         dispatch(
           Object.assign({}, params, {
             error,
@@ -46,5 +52,5 @@ export default function callApiMiddleware({ dispatch, getState }) {
           })
         )
     );
-  }
+  };
 }

@@ -5,11 +5,11 @@ import { fetchShows } from "../../redux/actions";
 import {
   getShows,
   getShowsPending,
-  getShowsError,
+  getShowsError
 } from "../../redux/reducers/shows";
 import Teaser from "../teaser";
 
-import "./styles.scss"
+import "./styles.scss";
 
 // Static list for test purposes
 const favoriteShowIds = [6771, 1955, 26437];
@@ -21,7 +21,7 @@ export default function TeasersList() {
   const error = useSelector(getShowsError);
 
   useEffect(() => {
-    dispatch(fetchShows(favoriteShowIds))
+    dispatch(fetchShows(favoriteShowIds));
   }, [dispatch]);
 
   if (pending) return "Loading...";
@@ -30,7 +30,9 @@ export default function TeasersList() {
 
   return (
     <section className="teasers-list">
-      {shows.map((show) => <Teaser show={show} key={show.id} />)}
+      {shows.map(show => (
+        <Teaser show={show} key={show.id} />
+      ))}
     </section>
   );
 }

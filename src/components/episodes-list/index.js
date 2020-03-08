@@ -9,7 +9,7 @@ import {
   getEpisodesError
 } from "../../redux/reducers/episodes";
 
-import "./styles.scss"
+import "./styles.scss";
 
 export default function EpisodesList({ showId }) {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ export default function EpisodesList({ showId }) {
   const error = useSelector(getEpisodesError);
 
   useEffect(() => {
-    dispatch(fetchEpisodesByShow(showId))
+    dispatch(fetchEpisodesByShow(showId));
   }, [dispatch, showId]);
 
   if (pending) return "Loading...";
@@ -27,7 +27,7 @@ export default function EpisodesList({ showId }) {
 
   return (
     <section className="episodes-list">
-      {episodes.map((episode) => {
+      {episodes.map(episode => {
         return (
           <div className="episodes-list__item" key={episode.id}>
             <Link to={`/episode/${episode.id}`} className="episodes-list__link">

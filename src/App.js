@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, BrowserRouter, Redirect, Switch} from "react-router-dom";
+import { Route, BrowserRouter, Redirect, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import configureStore from "./redux/store";
@@ -19,7 +19,7 @@ function App() {
         <MainMenu />
         <main className="content">
           <Switch>
-            <Route path="/favorite-tv-shows" exact component={TeasersList}/>
+            <Route path="/favorite-tv-shows" exact component={TeasersList} />
             <Route path="/shows/:id" exact component={Show} />
             <Route path="/episode/:id" exact component={Episode} />
             <Redirect from="/" to="/favorite-tv-shows" />
