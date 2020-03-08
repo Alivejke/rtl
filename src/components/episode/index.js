@@ -35,11 +35,13 @@ export default function Episode() {
   return (
     <article className="episode">
       <div className="episode__poster">
-        <img
-          className="episode__image"
-          src={episode.image.medium}
-          alt={episode.name}
-        />
+        {episode.image &&
+          <img
+            className="episode__image"
+            src={episode.image.medium}
+            alt={episode.name}
+          />
+        }
       </div>
       <div className="episode__info">
         <h1 className="episode__title">{episode.name}</h1>

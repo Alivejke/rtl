@@ -10,6 +10,8 @@
 
   &__poster {
     width: 100%;
+    min-height: 140px;
+    background: gray;
 
     @include on-small {
       width: 150px;
@@ -22,6 +24,7 @@
 
   &__image {
     width: 100%;
+    display: block;
   }
 
   &__info {
