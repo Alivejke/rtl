@@ -1,0 +1,46 @@
+@import "../../styles";
+
+.episode {
+  display: flex;
+  flex-direction: column;
+
+  @include on-small {
+    flex-direction: row;
+  }
+
+  &__poster {
+    width: 100%;
+
+    @include on-small {
+      width: 150px;
+    }
+
+    @include on-medium {
+      width: 250px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__info {
+    flex: 1;
+    margin: spacing(1);
+
+    @include on-small {
+      margin: spacing(1) spacing(2);
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: spacing(1);
+
+    @include on-small {
+      font-size: 18px;
+      margin-bottom: spacing(2);
+    }
+  }
+}

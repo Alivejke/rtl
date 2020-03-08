@@ -1,0 +1,31 @@
+@import "../../styles";
+
+.episodes-list {
+  &__link {
+    text-decoration: none;
+    color: $c-link-secondary;
+    display: flex;
+    padding: 4px 0;
+  }
+
+  &__link:hover {
+    background-color: $c-background-hover;
+  }
+
+  &__number,
+  &__season {
+    min-width: 20px;
+    text-align: center;
+    margin-right: 4px;
+  }
+
+  &__name {
+    flex: 1;
+  }
+
+  &__date {
+    margin-right: 4px;
+    width: 90px;
+    text-align: right;
+  }
+}

@@ -1,0 +1,10 @@
+@import "./variables";
+
+@function spacing($step) {
+  @if $step % 1 != 0 {
+    @error 'Number should be an integer';
+    @return null;
+  }
+
+  @return $step * $spacing;
+}

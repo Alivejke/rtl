@@ -1,0 +1,26 @@
+@import "../../styles";
+
+.main-menu {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__list {
+    @include default-container-padding;
+
+    display: flex;
+    width: $content-max-width;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $c-link-invert;
+    font-weight: 600;
+  }
+
+  &__link:hover {
+    color: $c-link-invert-secondary;
+  }
+}

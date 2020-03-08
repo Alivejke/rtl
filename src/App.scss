@@ -1,0 +1,8 @@
+@import "./styles";
+
+.content {
+  @include default-container-padding;
+
+  max-width: $content-max-width;
+  margin: 0 auto;
+}

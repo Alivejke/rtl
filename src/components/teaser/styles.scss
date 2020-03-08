@@ -1,0 +1,38 @@
+@import "../../styles";
+
+.teaser {
+  padding:  spacing(1);
+  box-sizing: border-box;
+  text-align: center;
+  width: 50%;
+
+  @include on-small {
+    padding: spacing(2);
+    width: 33.333333334%;
+  }
+
+  @include on-medium {
+    width: 20%;
+  }
+
+  &__image {
+    max-width: 100%;
+    margin-bottom: spacing(1);
+  }
+
+  &__title {
+    font-size: 16px;
+  }
+
+  &__link {
+    color: $c-link;
+  }
+
+  &:hover &__link {
+    color: $c-link-secondary;
+  }
+
+  &__year {
+    line-height: 1.6;
+  }
+}

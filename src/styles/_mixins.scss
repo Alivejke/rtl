@@ -1,0 +1,21 @@
+@import "./variables";
+
+@mixin on-small {
+  @media (min-width: $bp-small) {
+    @content;
+  }
+}
+
+@mixin on-medium {
+  @media (min-width: $bp-medium) {
+    @content;
+  }
+}
+
+@mixin default-container-padding {
+  padding: spacing(1);
+
+  @include on-small {
+    padding: spacing(2);
+  }
+}
